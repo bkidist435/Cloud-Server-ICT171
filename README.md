@@ -175,7 +175,7 @@ Then visit: `http://your-ec2-ip/info.php` to confirm PHP is working.
 
 3. Setting Up WordPress
 
-After setting up the LAMP stack, I installed WordPress manually to set up my **Grace and Light** site. 
+After setting up the LAMP stack, I installed WordPress manually to set up my Grace and Light site. 
 
 1. Create a MySQL Database and User for WordPress
 
@@ -337,39 +337,36 @@ I also tested it via SSL Labs:
 
 ---
 
-Now my website is fully secure with a green lock! 
----
-
-That sounds perfect! Here’s a neat way you can document those key points clearly and professionally in your README (or a separate documentation file):
+Now my website is fully secure with a green lock.
 
 ---
 
-## Suggested README Additions for Your Project
+Suggested README Additions for Your Project
 
-### 1. **Custom JavaScript Usage**
+1. Custom JavaScript Usage
 
 I added a custom JavaScript script to enhance the user experience on the blog. This script \[briefly explain what it does, e.g., smooth scrolling, interactive menu, dynamic date display, etc.].
 
-* **Location:** The script is located in `/path/to/js/script.js` (or within the WordPress theme folder).
-* **Purpose:** It improves \[usability, engagement, visual effect, etc.].
-* **How to modify:** To update or expand this script, edit the file and upload it via FTP or through the WordPress theme editor.
+* Location: The script is located in `/path/to/js/script.js` (or within the WordPress theme folder).
+* Purpose: It improves \[usability, engagement, visual effect, etc.].
+* How to modify: To update or expand this script, edit the file and upload it via FTP or through the WordPress theme editor.
 
 ---
 
-#2. DNS Configuration**
+2. DNS Configuration
 
 The website uses a custom domain `graceandlight.space`. Here’s how I configured DNS to point to my AWS EC2 server:
 
-* **A Records:**
+* A Records:
 
-  * `@` (root domain) points to the public IPv4 address of my EC2 instance (e.g., `54.157.0.236`).
-  * `www` points to the same IP address or set as a CNAME to `@`.
-* **TTL:** I used the default/automatic TTL values provided by the domain registrar for fast propagation.
-* **Registrar:** I managed DNS records via my domain registrar’s dashboard (specify which one, e.g., Namecheap, GoDaddy).
+   `@` (root domain) points to the public IPv4 address of my EC2 instance (e.g., `54.157.0.236`).
+   `www` points to the same IP address or set as a CNAME to `@`.
+* TTL: I used the default/automatic TTL values provided by the domain registrar for fast propagation.
+* Registrar: I managed DNS records via my domain registrar’s dashboard (specify which one, e.g., Namecheap, GoDaddy).
 
 ---
 
-### 3. **SSL/TLS Setup with Let’s Encrypt**
+3. SSL/TLS Setup with Let’s Encrypt**
 
 To secure the website with HTTPS, I installed a free SSL certificate using Let’s Encrypt:
 
@@ -392,14 +389,10 @@ Adding Posts: Log in to the WordPress admin panel at `https://www.graceandlight.
 ---
 
 Custom JavaScript Usage
-I added a custom JavaScript script to enhance the user experience on the blog. This script [briefly explain what it does, e.g., smooth scrolling, interactive menu, dynamic date display, etc.].
+I added a custom JavaScript script to enhance the user experience on the blog. This script 
+The script is located in the reflection corner page
 
-Location: The script is located in the reflection corner page
-
-It improves [usability, engagement, visual effect, etc.].
-
-
-Sure! Here’s a concise, professional conclusion you can add at the end of your GitHub documentation README:
+It improves usability, engagement, visual effect, etc!
 
 ---
 
