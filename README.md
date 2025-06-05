@@ -12,14 +12,13 @@ This project is a simple cloud-hosted blog website titled **Grace and Light**, b
 The website is hosted on an Amazon EC2 Ubuntu server, running Apache2, with WordPress installed and linked to a real domain.
 
 Server Setup Summary
-- Cloud Provider: Amazon Web Services (AWS)
-- Instance Type: EC2 (Ubuntu 20.04 LTS)
-- Web Server: Apache2
-- CMS: WordPress
-- Domain Name: graceandlight.space
-- SSL: Secured with Let’s Encrypt SSL certificate (HTTPS enabled)
-- Scripting:
-  - Bash used to automate LAMP installation
+- [Project Description](#project-description)
+- [EC2 Setup](#ec2-setup)
+- [Installing LAMP Stack](#installing-lamp-stack)
+- [Installing WordPress](#installing-wordpress)
+- [Connecting Domain](#connecting-domain)
+- [SSL with Let’s Encrypt](#ssl-with-lets-encrypt)
+- [Final Notes](#final-notes)
 
 Softwares Used
 - Amazon EC2 (AWS)
