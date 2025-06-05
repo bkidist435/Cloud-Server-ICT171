@@ -1,9 +1,7 @@
 # Cloud-Server-ICT171
 A personal blog website called Grace and Light, hosted on an Amazon EC2 Ubuntu server using Apache2 and WordPress, with a linked domain name and SSL security. Includes documentation, code, and video explainer.
 
-Grace and Light – Cloud Server Project
-
-Student Info
+Info
 - Name: Kidist Begashaw
 - Student Number: 34363736
 - Unit: ICT171
@@ -11,7 +9,7 @@ Student Info
 Project Overview
 This project is a simple cloud-hosted blog website titled **Grace and Light**, built as part of the ICT171 Cloud Server assessment. It is designed to serve as a personal spiritual and creative space with long-term potential to expand into a full website with resources and digital downloads.
 
-The website is hosted on an Amazon EC2 Ubuntu server, running **Apache2**, with WordPress installed and linked to a real domain.
+The website is hosted on an Amazon EC2 Ubuntu server, running Apache2, with WordPress installed and linked to a real domain.
 
 Server Setup Summary
 - Cloud Provider: Amazon Web Services (AWS)
@@ -22,9 +20,8 @@ Server Setup Summary
 - SSL: Secured with Let’s Encrypt SSL certificate (HTTPS enabled)
 - Scripting:
   - Bash used to automate LAMP installation
-  - Cron job set up for weekly file backups
 
-Technologies Used
+Softwares Used
 - Amazon EC2 (AWS)
 - Ubuntu Linux
 - Apache2
@@ -33,7 +30,7 @@ Technologies Used
 - WordPress
 - Certbot (Let’s Encrypt)
 - Namecheap (DNS domain registrar)
-- Git + GitHub for version control and documentation
+- GitHub documentation
 
 Project Structure
 
@@ -53,7 +50,7 @@ Project Steps
 
 1. Launching the EC2 Instance
 
-To begin, I launched a **free-tier EC2 instance** using Ubuntu 20.04 on Amazon Web Services.
+To begin, I launched a free-tier EC2 instance using Ubuntu 20.04 on Amazon AWS
 
 Steps:
 
@@ -83,9 +80,9 @@ ssh -i my-key.pem ubuntu@<your-ec2-ip>
 
 How I Installed the LAMP Stack on Ubuntu (EC2)
 
-To host my Grace and Light website, I used a **LAMP stack** on an **Ubuntu EC2 instance**. Here's exactly how I set it up:
+To host my Grace and Light website, I used a LAMP stack on an Ubuntu EC2 instance. Here's exactly how I set it up:
 
-1. Update the Package Index
+1. Update the Package
 
 ```bash
 sudo apt update
@@ -99,7 +96,7 @@ Apache is the web server that handles HTTP requests.
 sudo apt install apache2
 ```
 
-To check if it's working, visit your EC2 Public IP (e.g., `http://54.xx.xx.xx`) — you should see the Apache default page.
+To check if it's working, visit your EC2 Public IP — you should see the Apache default page.
 
 ![apache default page](https://github.com/user-attachments/assets/515a5311-c311-47d9-bdde-606ac452a76b)
 
@@ -126,11 +123,11 @@ Then run the secure installation script:
 sudo mysql_secure_installation
 ```
 
-I followed the prompts to set a root password and secure the database setup.
+I followed the steps to set a root password and secure the database setup.
 
 5. Install PHP
 
-PHP is the language WordPress is built with.
+PHP is what WordPress is built with.
 
 ```bash
 sudo apt install php libapache2-mod-php php-mysql
@@ -142,7 +139,7 @@ Check version to confirm install:
 php -v
 ```
 
-### 6. Test Apache with PHP
+6. Test Apache with PHP
 
 I created a PHP test file:
 
@@ -164,13 +161,9 @@ Then visit: `http://your-ec2-ip/info.php` to confirm PHP is working.
 
 ---
 
-Let me know when you're ready to add the next part (like WordPress install, domain connection, or SSL).
-
----
-
 3. Setting Up WordPress
 
-After setting up the LAMP stack, I installed WordPress manually to power my **Grace and Light** site. Here's how I did it:
+After setting up the LAMP stack, I installed WordPress manually to set up my **Grace and Light** site. 
 
 1. Create a MySQL Database and User for WordPress
 
@@ -249,20 +242,20 @@ sudo a2enmod rewrite
 sudo systemctl restart apache2
 ```
 
-### 5. Complete WordPress Setup via Browser
+5. Complete WordPress Setup via Browser
 
 I visited `http://graceandlight.space` in the browser.
 
 ![wordpress set up screen](https://github.com/user-attachments/assets/cb53338e-d4ed-403f-a693-84d1c6632dc4)
 
-This opened the **WordPress setup wizard**, where I entered:
+This opened the WordPress setup wizard, where I entered:
 
 * Site title: `Grace and Light`
 * Username: (admin user I chose)
 * Password: (secure password)
 * Email: (mine)
 
-Done! WordPress was installed and my site was live.
+WordPress was installed and my site was live.
 
 ---
 
@@ -272,7 +265,7 @@ I purchased the domain graceandlight.space via Namecheap.
 
 To point it to my server:
 
-* I added an **A Record** in Namecheap’s DNS settings:
+* I added an A Record in Namecheap’s DNS settings:
 
   * Host: `@`
   * Value: `<my-ec2-public-ip>`
@@ -280,7 +273,7 @@ To point it to my server:
 
 Optional:
 
-* Added a **CNAME**:
+* Added a NAME:
 
   * Host: `www`
   * Value: `graceandlight.space`
@@ -295,15 +288,7 @@ After DNS propagated, I could visit my site at:
 
 6. Installing SSL (HTTPS)
 
-To secure the website with HTTPS, I used **Certbot**:
-
-Here's the **Let’s Encrypt SSL setup section** from DigitalOcean, rewritten and personalized for your GitHub documentation based on your **Grace and Light** website hosted on an EC2 Ubuntu server.
-
----
-
-## 🔐 How I Secured My Site with Let’s Encrypt SSL (Grace and Light)
-
----
+To secure the website with HTTPS, I used Certbot
 
 1. Install Certbot and the Apache Plugin
 
@@ -322,10 +307,10 @@ I ran this command to automatically configure SSL for my Apache server and domai
 sudo certbot --apache
 ```
 
-I was prompted to:
+I was requested to:
 
 * Choose the domain to secure (I selected `graceandlight.space`)
-* Redirect HTTP to HTTPS — I chose the option to force **secure HTTPS** (recommended)
+* Redirect HTTP to HTTPS — I chose the option to force secure HTTPS (recommended)
 
 ---
 
@@ -335,22 +320,18 @@ I visited:
 `https://graceandlight.space`
 ✅ It loaded securely with the padlock icon!
 
-You can also test it via SSL Labs:
+I also tested it via SSL Labs:
 [https://www.ssllabs.com/ssltest/](https://www.ssllabs.com/ssltest/)
 
 ---
 
-4. Auto-Renewal Check
-
-Let’s Encrypt certificates expire every 90 days. To make sure mine will auto-renew, I tested the renewal process:
-
-```bash
-sudo certbot renew --dry-run
-```
-
 Now my website is fully secure with a green lock! 
+---
+
+This is the final result of my website
 
 <img width="1440" alt="final live website" src="https://github.com/user-attachments/assets/df720493-920c-474d-8592-58de478e3068" />
 
-
+You can also access it through here:
+www.graceandlight.space
 
