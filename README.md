@@ -1,8 +1,8 @@
 You can also access my site through here:
 www.graceandlight.space
 
-Link to my video explainer:
-
+Link to my video explainer: 
+https://youtu.be/XVccU4TcdJY
 
 # Cloud-Server-ICT171
 A personal blog website called Grace and Light, hosted on an Amazon EC2 Ubuntu server using Apache2 and WordPress, with a linked domain name and SSL security. Includes documentation, code, and video explainer.
