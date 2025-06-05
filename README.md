@@ -80,32 +80,99 @@ ssh -i my-key.pem ubuntu@<your-ec2-ip>
 
 ---
 
-### 🔹 2. Installing Apache, MySQL, and PHP (LAMP Stack)
+2. Installing Apache, MySQL, and PHP (LAMP Stack)
 To download both MYSQL and PHP (LampStack on Ubuntu I followed this site:
 
 (https://www.digitalocean.com/community/tutorials/how-to-install-lamp-stack-on-ubuntu)
 
 Once connected to the EC2 instance via SSH:
-
-```bash
-# Update packages
-sudo apt update
-
-# Install Apache Web Server
-sudo apt install apache2
-
-# Install MySQL Database Server
-sudo apt install mysql-server
-
-# Install PHP and required extensions
-sudo apt install php libapache2-mod-php php-mysql
-```
-
-To check that Apache installed correctly, I visited my EC2 public IP in the browser and saw the Apache welcome page.
+Got it! Here's the **"How To Install LAMP Stack on Ubuntu"** section from the DigitalOcean tutorial, rewritten and personalized for your GitHub README, based on your own EC2-hosted *Grace and Light* site.
 
 ---
 
-### 🔹 3. Setting Up WordPress
+How I Installed the LAMP Stack on Ubuntu (EC2)
+
+To host my **Grace and Light** website, I used a **LAMP stack** on an **Ubuntu EC2 instance**. Here's exactly how I set it up:
+
+1. Update the Package Index
+
+```bash
+sudo apt update
+```
+
+2. Install Apache Web Server
+
+Apache is the web server that handles HTTP requests.
+
+```bash
+sudo apt install apache2
+```
+
+To check if it's working, visit your EC2 Public IP (e.g., `http://54.xx.xx.xx`) — you should see the Apache default page.
+
+3. Adjust the Firewall
+
+I allowed HTTP traffic on the server:
+
+```bash
+sudo ufw allow in "Apache Full"
+```
+
+4. Install MySQL
+
+MySQL is the database where WordPress stores its data.
+
+```bash
+sudo apt install mysql-server
+```
+
+Then run the secure installation script:
+
+```bash
+sudo mysql_secure_installation
+```
+
+I followed the prompts to set a root password and secure the database setup.
+
+5. Install PHP
+
+PHP is the language WordPress is built with.
+
+```bash
+sudo apt install php libapache2-mod-php php-mysql
+```
+
+Check version to confirm install:
+
+```bash
+php -v
+```
+
+### 6. Test Apache with PHP
+
+I created a PHP test file:
+
+```bash
+sudo nano /var/www/html/info.php
+```
+
+Add this inside:
+
+```php
+<?php
+phpinfo();
+?>
+```
+
+Then visit: `http://your-ec2-ip/info.php` to confirm PHP is working.
+
+---
+
+Let me know when you're ready to add the next part (like WordPress install, domain connection, or SSL).
+
+---
+
+3. Setting Up WordPress
 
 I installed WordPress in the `/var/www/html` directory:
 
@@ -127,7 +194,7 @@ sudo chmod -R 755 /var/www/html
 
 ---
 
-### 🔹 4. Creating the Database and Configuring WordPress
+4. Creating the Database and Configuring WordPress
 
 Inside the MySQL shell:
 
@@ -168,31 +235,31 @@ Now when I visited my public IP, the WordPress setup screen appeared!
 
 ---
 
-### 🔹 5. Connecting a Domain Name
+5. Connecting a Domain Name
 
-I purchased the domain **graceandlight.space** via Namecheap.
+I purchased the domain graceandlight.space via Namecheap.
 
 To point it to my server:
 
 * I added an **A Record** in Namecheap’s DNS settings:
 
-  * **Host**: `@`
-  * **Value**: `<my-ec2-public-ip>`
-  * **TTL**: Automatic
+  * Host: `@`
+  * Value: `<my-ec2-public-ip>`
+  * TTL: Automatic
 
 Optional:
 
 * Added a **CNAME**:
 
-  * **Host**: `www`
-  * **Value**: `graceandlight.space`
+  * Host: `www`
+  * Value: `graceandlight.space`
 
 After DNS propagated, I could visit my site at:
-🔗 **[https://graceandlight.space](https://graceandlight.space)**
+[https://graceandlight.space](https://graceandlight.space)**
 
 ---
 
-### 🔹 6. Installing SSL (HTTPS)
+6. Installing SSL (HTTPS)
 
 To secure the website with HTTPS, I used **Certbot**:
 
@@ -208,6 +275,4 @@ During setup:
 
 Now my website is fully secure with a green lock! 🔒
 
----
 
-Let me know if you’d like me to format this into your current GitHub repo directly or give you a downloadable version.
