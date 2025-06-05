@@ -330,7 +330,7 @@ I was requested to:
 
 I visited:
 `https://graceandlight.space`
-✅ It loaded securely with the padlock icon!
+It loaded securely with the padlock icon
 
 I also tested it via SSL Labs:
 [https://www.ssllabs.com/ssltest/](https://www.ssllabs.com/ssltest/)
@@ -340,10 +340,72 @@ I also tested it via SSL Labs:
 Now my website is fully secure with a green lock! 
 ---
 
-This is the final result of my website
+That sounds perfect! Here’s a neat way you can document those key points clearly and professionally in your README (or a separate documentation file):
 
-<img width="1440" alt="final live website" src="https://github.com/user-attachments/assets/df720493-920c-474d-8592-58de478e3068" />
+---
 
-You can also access it through here:
-www.graceandlight.space
+## Suggested README Additions for Your Project
 
+### 1. **Custom JavaScript Usage**
+
+I added a custom JavaScript script to enhance the user experience on the blog. This script \[briefly explain what it does, e.g., smooth scrolling, interactive menu, dynamic date display, etc.].
+
+* **Location:** The script is located in `/path/to/js/script.js` (or within the WordPress theme folder).
+* **Purpose:** It improves \[usability, engagement, visual effect, etc.].
+* **How to modify:** To update or expand this script, edit the file and upload it via FTP or through the WordPress theme editor.
+
+---
+
+#2. DNS Configuration**
+
+The website uses a custom domain `graceandlight.space`. Here’s how I configured DNS to point to my AWS EC2 server:
+
+* **A Records:**
+
+  * `@` (root domain) points to the public IPv4 address of my EC2 instance (e.g., `54.157.0.236`).
+  * `www` points to the same IP address or set as a CNAME to `@`.
+* **TTL:** I used the default/automatic TTL values provided by the domain registrar for fast propagation.
+* **Registrar:** I managed DNS records via my domain registrar’s dashboard (specify which one, e.g., Namecheap, GoDaddy).
+
+---
+
+### 3. **SSL/TLS Setup with Let’s Encrypt**
+
+To secure the website with HTTPS, I installed a free SSL certificate using Let’s Encrypt:
+
+* Installed Certbot on the Ubuntu server to request and manage certificates.
+* Used Certbot’s Apache plugin to automatically configure Apache with SSL.
+* Set up automatic certificate renewal with a cron job to keep the certificate valid without manual intervention.
+* After setup, the website is accessible securely via `https://www.graceandlight.space` without any certificate errors.
+
+---
+
+
+The website runs on WordPress, making content management easy:
+
+Adding Posts: Log in to the WordPress admin panel at `https://www.graceandlight.space/wp-admin`.
+- Creating Posts: Use the "Add New Post" feature to write devotionals, commentaries, or upload PDFs (e.g., the reflection journal).
+* Media Library: Upload images, PDFs, or other media to the WordPress Media Library for easy insertion into posts.
+- Editing Content: Posts can be edited or updated anytime via the admin dashboard.
+- Plugins: Installed useful plugins to optimize performance, SEO, and security.
+
+---
+
+Custom JavaScript Usage
+I added a custom JavaScript script to enhance the user experience on the blog. This script [briefly explain what it does, e.g., smooth scrolling, interactive menu, dynamic date display, etc.].
+
+Location: The script is located in the reflection corner page
+
+It improves [usability, engagement, visual effect, etc.].
+
+
+Sure! Here’s a concise, professional conclusion you can add at the end of your GitHub documentation README:
+
+---
+
+
+This project demonstrates the full process of deploying a personal WordPress blog on a cloud-hosted AWS EC2 Ubuntu server from scratch, including server setup, domain configuration, and SSL security. The site Grace and Light is fully functional, secure, and easy to maintain through WordPress. The included documentation, scripts, and video provide clear guidance for replicating this setup.
+
+I have taken care to ensure all aspects—from server configuration to DNS and SSL management—are well documented for transparency and ease of use. This project showcases both foundational cloud server skills and practical web development, serving as a solid base for future website expansions.
+
+  
