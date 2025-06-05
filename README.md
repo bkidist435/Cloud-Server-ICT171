@@ -81,6 +81,10 @@ ssh -i my-key.pem ubuntu@<your-ec2-ip>
 ---
 
 ### 🔹 2. Installing Apache, MySQL, and PHP (LAMP Stack)
+To download both MYSQL and PHP (LampStack as a basis before Wordpress, I followed this site:
+
+https://www.digitalocean.com/community/tutorials/how-to-install-wordpress-on-ubuntu-22-04-with-a-lamp-stack
+
 
 Once connected to the EC2 instance via SSH:
 
