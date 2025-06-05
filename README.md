@@ -11,7 +11,7 @@ Student Info
 Project Overview
 This project is a simple cloud-hosted blog website titled **Grace and Light**, built as part of the ICT171 Cloud Server assessment. It is designed to serve as a personal spiritual and creative space with long-term potential to expand into a full website with resources and digital downloads.
 
-The website is hosted on an **Amazon EC2 Ubuntu server, running **Apache2**, with WordPress installed and linked to a real domain.
+The website is hosted on an Amazon EC2 Ubuntu server, running **Apache2**, with WordPress installed and linked to a real domain.
 
 Server Setup Summary
 - Cloud Provider: Amazon Web Services (AWS)
