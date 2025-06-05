@@ -160,6 +160,8 @@ phpinfo();
 
 Then visit: `http://your-ec2-ip/info.php` to confirm PHP is working.
 
+![phpinfo-page-example](https://github.com/user-attachments/assets/6db5c258-73d3-49de-a34f-c2cc5e3df917)
+
 ---
 
 Let me know when you're ready to add the next part (like WordPress install, domain connection, or SSL).
