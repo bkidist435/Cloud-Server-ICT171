@@ -53,7 +53,7 @@ Project Steps
 
 1. Launching the EC2 Instance
 
-To begin, I launched a **free-tier EC2 instance** using Ubuntu 20.04 on [Amazon Web Services (AWS)](https://aws.amazon.com/ec2/).
+To begin, I launched a **free-tier EC2 instance** using Ubuntu 20.04 on Amazon Web Services.
 
 Steps:
 
@@ -76,13 +76,7 @@ ssh -i my-key.pem ubuntu@<your-ec2-ip>
 ---
 
 2. Installing Apache, MySQL, and PHP (LAMP Stack)
-To download both MYSQL and PHP (LampStack on Ubuntu I followed this site:
-
-(https://www.digitalocean.com/community/tutorials/how-to-install-lamp-stack-on-ubuntu)
-
-Once connected to the EC2 instance via SSH:
-
----
+   
 
 How I Installed the LAMP Stack on Ubuntu (EC2)
 
@@ -168,64 +162,97 @@ Let me know when you're ready to add the next part (like WordPress install, doma
 
 3. Setting Up WordPress
 
-I installed WordPress in the `/var/www/html` directory:
+After setting up the LAMP stack, I installed WordPress manually to power my **Grace and Light** site. Here's how I did it:
 
-```bash
-cd /var/www/html
-sudo rm index.html
-sudo wget https://wordpress.org/latest.tar.gz
-sudo tar -xvzf latest.tar.gz
-sudo mv wordpress/* .
-sudo rm -rf wordpress latest.tar.gz
-```
+1. Create a MySQL Database and User for WordPress
 
-Then, I set the proper file permissions:
-
-```bash
-sudo chown -R www-data:www-data /var/www/html
-sudo chmod -R 755 /var/www/html
-```
-
----
-
-4. Creating the Database and Configuring WordPress
-
-Inside the MySQL shell:
+I logged into MySQL:
 
 ```bash
 sudo mysql
 ```
 
+Then I created the database and user:
+
 ```sql
-CREATE DATABASE wordpress;
-CREATE USER 'wpuser'@'localhost' IDENTIFIED BY 'securepassword';
-GRANT ALL PRIVILEGES ON wordpress.* TO 'wpuser'@'localhost';
+CREATE DATABASE graceandlight_db DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+CREATE USER 'graceuser'@'localhost' IDENTIFIED BY 'your-strong-password';
+GRANT ALL PRIVILEGES ON graceandlight_db.* TO 'graceuser'@'localhost';
 FLUSH PRIVILEGES;
 EXIT;
 ```
 
-Then I configured WordPress to connect to this database:
+2. Download and Configure WordPress
+
+I moved to the `/tmp` directory and downloaded WordPress:
 
 ```bash
-sudo cp wp-config-sample.php wp-config.php
-sudo nano wp-config.php
+cd /tmp
+curl -O https://wordpress.org/latest.tar.gz
+tar -xvzf latest.tar.gz
 ```
 
-I updated these lines:
-
-```php
-define( 'DB_NAME', 'wordpress' );
-define( 'DB_USER', 'wpuser' );
-define( 'DB_PASSWORD', 'securepassword' );
-```
-
-Restart Apache:
+Then I copied it to the web root:
 
 ```bash
+sudo cp -a wordpress/. /var/www/html
+```
+
+3. Set the Correct Permissions
+
+I gave ownership of the WordPress files to the Apache user:
+
+```bash
+sudo chown -R www-data:www-data /var/www/html
+sudo find /var/www/html/ -type d -exec chmod 755 {} \;
+sudo find /var/www/html/ -type f -exec chmod 644 {} \;
+```
+
+4. Configure Apache for WordPress
+
+I created a config file for my domain:
+
+```bash
+sudo nano /etc/apache2/sites-available/graceandlight.space.conf
+```
+
+Then added:
+
+```apache
+<VirtualHost *:80>
+    ServerName graceandlight.space
+    ServerAlias www.graceandlight.space
+    DocumentRoot /var/www/html
+
+    <Directory /var/www/html>
+        AllowOverride All
+    </Directory>
+
+    ErrorLog ${APACHE_LOG_DIR}/error.log
+    CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
+```
+
+Enabled the site and rewrite module:
+
+```bash
+sudo a2ensite graceandlight.space.conf
+sudo a2enmod rewrite
 sudo systemctl restart apache2
 ```
 
-Now when I visited my public IP, the WordPress setup screen appeared!
+### 5. Complete WordPress Setup via Browser
+
+I visited `http://graceandlight.space` in the browser.
+
+This opened the **WordPress setup wizard**, where I entered:
+
+* Site title: `Grace and Light`
+* Username: (admin user I chose)
+* Password: (secure password)
+* Email: (mine)
+
+Done! WordPress was installed and my site was live.
 
 ---
 
