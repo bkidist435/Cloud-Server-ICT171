@@ -71,6 +71,9 @@ After launching, I downloaded my `.pem` key and connected using:
 ```bash
 chmod 400 my-key.pem
 ssh -i my-key.pem ubuntu@<your-ec2-ip>
+
+<img width="1440" alt="ec2 running" src="https://github.com/user-attachments/assets/be1d7dc4-f932-49f3-a9e3-64a537c643c0" />
+
 ```
 
 ---
@@ -97,6 +100,9 @@ sudo apt install apache2
 ```
 
 To check if it's working, visit your EC2 Public IP (e.g., `http://54.xx.xx.xx`) — you should see the Apache default page.
+
+![apache default page](https://github.com/user-attachments/assets/515a5311-c311-47d9-bdde-606ac452a76b)
+
 
 3. Adjust the Firewall
 
@@ -245,6 +251,8 @@ sudo systemctl restart apache2
 
 I visited `http://graceandlight.space` in the browser.
 
+![wordpress set up screen](https://github.com/user-attachments/assets/cb53338e-d4ed-403f-a693-84d1c6632dc4)
+
 This opened the **WordPress setup wizard**, where I entered:
 
 * Site title: `Grace and Light`
@@ -274,6 +282,9 @@ Optional:
 
   * Host: `www`
   * Value: `graceandlight.space`
+    
+ <img width="1440" alt="dns set up on namecheap" src="https://github.com/user-attachments/assets/7b863bdd-d215-4aaf-acaa-fec500b03777" />
+
 
 After DNS propagated, I could visit my site at:
 [https://graceandlight.space](https://graceandlight.space)**
@@ -336,5 +347,8 @@ sudo certbot renew --dry-run
 ```
 
 Now my website is fully secure with a green lock! 
+
+<img width="1440" alt="final live website" src="https://github.com/user-attachments/assets/df720493-920c-474d-8592-58de478e3068" />
+
 
 
