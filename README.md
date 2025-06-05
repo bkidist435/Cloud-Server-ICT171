@@ -47,16 +47,11 @@ Project Structure
 │ └── dns-records.png
 └── video-link.txt - Link to my video explanation
 
-
-Ah! Thanks for the clarification — you're looking for a **step-by-step script or content** to include in your **GitHub `README.md`** to document each of the 5 key stages below using your own *Grace and Light* site as the example.
-
-I'll give you clean, copy-paste ready Markdown content for each section, ideal for your GitHub documentation:
-
 ---
 
-## 🚀 Project Steps
+Project Steps
 
-### 🔹 1. Launching the EC2 Instance
+1. Launching the EC2 Instance
 
 To begin, I launched a **free-tier EC2 instance** using Ubuntu 20.04 on [Amazon Web Services (AWS)](https://aws.amazon.com/ec2/).
 
@@ -86,13 +81,12 @@ To download both MYSQL and PHP (LampStack on Ubuntu I followed this site:
 (https://www.digitalocean.com/community/tutorials/how-to-install-lamp-stack-on-ubuntu)
 
 Once connected to the EC2 instance via SSH:
-Got it! Here's the **"How To Install LAMP Stack on Ubuntu"** section from the DigitalOcean tutorial, rewritten and personalized for your GitHub README, based on your own EC2-hosted *Grace and Light* site.
 
 ---
 
 How I Installed the LAMP Stack on Ubuntu (EC2)
 
-To host my **Grace and Light** website, I used a **LAMP stack** on an **Ubuntu EC2 instance**. Here's exactly how I set it up:
+To host my Grace and Light website, I used a **LAMP stack** on an **Ubuntu EC2 instance**. Here's exactly how I set it up:
 
 1. Update the Package Index
 
