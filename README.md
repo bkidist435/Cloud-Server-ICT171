@@ -284,16 +284,57 @@ After DNS propagated, I could visit my site at:
 
 To secure the website with HTTPS, I used **Certbot**:
 
+Here's the **Let’s Encrypt SSL setup section** from DigitalOcean, rewritten and personalized for your GitHub documentation based on your **Grace and Light** website hosted on an EC2 Ubuntu server.
+
+---
+
+## 🔐 How I Secured My Site with Let’s Encrypt SSL (Grace and Light)
+
+---
+
+1. Install Certbot and the Apache Plugin
+
 ```bash
+sudo apt update
 sudo apt install certbot python3-certbot-apache
+```
+
+---
+
+2. Get and Install the SSL Certificate
+
+I ran this command to automatically configure SSL for my Apache server and domain:
+
+```bash
 sudo certbot --apache
 ```
 
-During setup:
+I was prompted to:
 
-* I selected my domain (`graceandlight.space`)
-* Chose the option to redirect HTTP to HTTPS
+* Choose the domain to secure (I selected `graceandlight.space`)
+* Redirect HTTP to HTTPS — I chose the option to force **secure HTTPS** (recommended)
 
-Now my website is fully secure with a green lock! 🔒
+---
+
+3. Verify the SSL Certificate
+
+I visited:
+`https://graceandlight.space`
+✅ It loaded securely with the padlock icon!
+
+You can also test it via SSL Labs:
+[https://www.ssllabs.com/ssltest/](https://www.ssllabs.com/ssltest/)
+
+---
+
+4. Auto-Renewal Check
+
+Let’s Encrypt certificates expire every 90 days. To make sure mine will auto-renew, I tested the renewal process:
+
+```bash
+sudo certbot renew --dry-run
+```
+
+Now my website is fully secure with a green lock! 
 
 
