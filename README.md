@@ -36,12 +36,19 @@ Project Structure
 
 /grace-and-light-cloud-project
 │
+
 ├── README.md # This documentation
+
 ├── website-files/ # WordPress core files or HTML content
+
 ├── screenshots/ # Terminal, DNS, and browser screenshots
+
 │ ├── apache-running.png
+
 │ ├── wordpress-setup.png
+
 │ └── dns-records.png
+
 └── video-link.txt - Link to my video explanation
 
 ---
