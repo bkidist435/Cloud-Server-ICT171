@@ -4,8 +4,8 @@ www.graceandlight.space
 Link to my video explainer: 
 https://youtu.be/XVccU4TcdJY
 
-# Cloud-Server-ICT171
-A personal blog website called Grace and Light, hosted on an Amazon EC2 Ubuntu server using Apache2 and WordPress, with a linked domain name and SSL security. Includes documentation, code, and video explainer.
+Cloud-Server-ICT171
+A personal blog site called Grace and Light hosted on an Amazon EC2 Ubuntu server using Apache2 and WordPress, that has a domain name linked and also has added SSL security. With documentation, code, and a video explainer.
 
 Info
 - Name: Kidist Begashaw
@@ -13,7 +13,7 @@ Info
 - Unit: ICT171
 
 Project Overview
-This project is a simple cloud-hosted blog website titled **Grace and Light**, built as part of the ICT171 Cloud Server assessment. It is designed to serve as a personal spiritual and creative space with long-term potential to expand into a full website with resources and digital downloads.
+This project is a basic blog website hosted in the cloud named Grace and Light created for the ICT171 Cloud Server assessment. It is intended as a long-term personal space for spirituality and creativity, with the potential to develop into a full website with resources and digital downloads.
 
 The website is hosted on an Amazon EC2 Ubuntu server, running Apache2, with WordPress installed and linked to a real domain.
 
@@ -330,7 +330,7 @@ I was requested to:
 
 I visited:
 `https://graceandlight.space`
-It loaded securely with the padlock icon
+It loaded securely with the padlock sign
 
 I also tested it via SSL Labs:
 [https://www.ssllabs.com/ssltest/](https://www.ssllabs.com/ssltest/)
@@ -359,10 +359,10 @@ The website uses a custom domain `graceandlight.space`. Here’s how I configure
 
 * A Records:
 
-   `@` (root domain) points to the public IPv4 address of my EC2 instance (e.g., `54.157.0.236`).
-   `www` points to the same IP address or set as a CNAME to `@`.
-* TTL: I used the default/automatic TTL values provided by the domain registrar for fast propagation.
-* Registrar: I managed DNS records via my domain registrar’s dashboard (specify which one, e.g., Namecheap, GoDaddy).
+   `@` (root) points to the public IPv4 address of my EC2 instance (e.g., `54.157.0.236`).
+   `www` points to the same IP address `@`.
+* TTL: I used the automatic TTL provided by the domain registrar for fast propagation.
+* Registrar: I managed DNS records via my domain registrar’s dashboard (specify which one, e.g., Namecheap, GoDaddy). 
 
 ---
 
@@ -381,24 +381,24 @@ To secure the website with HTTPS, I installed a free SSL certificate using Let�
 The website runs on WordPress, making content management easy:
 
 Adding Posts: Log in to the WordPress admin panel at `https://www.graceandlight.space/wp-admin`.
-- Creating Posts: Use the "Add New Post" feature to write devotionals, commentaries, or upload PDFs (e.g., the reflection journal).
+- Creating Posts: Use the "Add New Post" feature to write devotionals or upload PDFs (e.g., the reflection journal).
 * Media Library: Upload images, PDFs, or other media to the WordPress Media Library for easy insertion into posts.
 - Editing Content: Posts can be edited or updated anytime via the admin dashboard.
 - Plugins: Installed useful plugins to optimize performance, SEO, and security.
 
 ---
 
-Custom JavaScript Usage
-I added a custom JavaScript script to enhance the user experience on the blog. This script 
+Custom JavaScript 
+I added a custom JavaScript script to enhance the user experience. This script 
 The script is located in the reflection corner page
 
-It improves usability, engagement, visual effect, etc!
+It improves usability, engagement and visual effect.
 
 ---
 
 
-This project demonstrates the full process of deploying a personal WordPress blog on a cloud-hosted AWS EC2 Ubuntu server from scratch, including server setup, domain configuration, and SSL security. The site Grace and Light is fully functional, secure, and easy to maintain through WordPress. The included documentation, scripts, and video provide clear guidance for replicating this setup.
+This project illustrates the complete procedure for building a personal WordPress blog on a cloud-hosted AWS EC2 Ubuntu server from the ground up, including setting up the server, configuring the domain, offering SSL security, etc. The site Grace and Light is fully functional, secure, and easy to maintain in simply WordPress. All the documentation, scripts, and video provide instructions on this being replicated.
 
-I have taken care to ensure all aspects—from server configuration to DNS and SSL management—are well documented for transparency and ease of use. This project showcases both foundational cloud server skills and practical web development, serving as a solid base for future website expansions.
+I have ensured to document everything from the server configuration to the DNS and SSL management for transparency and easy use. This project demonstrates basic cloud server skills and practical web development, while providing a good foundation for expanding the website later on.
 
   
